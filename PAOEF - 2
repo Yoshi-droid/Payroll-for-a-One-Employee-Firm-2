@@ -1,0 +1,41 @@
+
+/*Program to compute the payroll for a one employee firm
+  Written by Ron 
+  Sept 2007
+  Version 1.1 (add annotated output, control dec places and formatting of lines, and better looking input prompt)
+  Languages in C (gcc target)
+
+*/
+
+#include <stdio.h>
+int main(void)
+{
+  double hours,                  //number of hours worked 
+         rate,                   //hourly rates of pay
+         gross,                  //gross pay
+         fica,                   //social security tax
+         medicare,              //medicare tax 
+         fed,                   //federal tax
+         state,                 //state tax
+         net;                   //net pay 
+
+printf("Enter number of hours worked:  ");
+scanf("%lf", &hours);
+print("Enter hourly rate of pay:  ");
+scanf("%lf", &rate);
+gross=hours*rate;
+fica=gross*.062;
+medicare=gross*.0145;
+fed=gross*.15;
+state=gross*.05;
+net=gross-(fica+medicare+fed+state);
+printf2("Number of hours worked:  %10.2f\n", hours);
+printf("Hourly rate of pay:       %10.2f\n", rate);
+printf("Gross pay:                %10.2f\n", gross);
+printf("Social Security Tax:      %10.2f\n", fica);
+printf("Medicare Tax:             %10.2f\n", medicare);
+printf("Federal Tax:              %10.2f\n", fed);
+printf("State Tax:                %10.2f\n", state);
+printf("Net pay:                  %10.2f\n", net);
+return 0;
+}
